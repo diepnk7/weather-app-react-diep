@@ -1,5 +1,4 @@
 import "./App.css"
-import UilReact from '@iconscout/react-unicons/icons/uil-react'
 import TopButtons from "./components/TopButtons";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
@@ -35,16 +34,18 @@ function App() {
 
   const formatBackground = () => {
     if (!weather) return 'from-cyan-700 to-blue-700'
-    const threshold = units === 'metric' ? 20 : 60
+    const threshold = units === 'metric' ? 28 : 60
     if (weather.temp <= threshold) return 'from-cyan-700 to-blue-700'
 
     return 'from-yellow-700 to-orange-700'
   }
 
   return (
-    <div className={`mx-auto max-w-screen-md py-5 px-32 bg-gradient-to-br ${formatBackground()} h-fit shadow-xl shadow-gray-400`}>
-      <TopButtons setQuery={setQuery} />
-      <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+    <div className={`mx-auto py-5 lg:px-32 sm:px-10 px-4 bg-gradient-to-br ${formatBackground()} h-fit shadow-xl shadow-gray-400`}>
+      <div className="flex items-center md:justify-between justify-center gap-3">
+        <TopButtons setQuery={setQuery} />
+        <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+      </div>
 
       {weather && (
         <div>

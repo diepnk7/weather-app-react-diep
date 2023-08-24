@@ -23,7 +23,7 @@ function TopButtons({setQuery}) {
             title: 'Italy'
         },
     ]
-  return <div className='flex items-center justify-around my-6 '>
+  return <div className='w-[calc(100%-500px)] md:flex hidden gap-2 items-center justify-between my-6'>
     {citis.map((city) => (
         <button 
             key={city.id} 
