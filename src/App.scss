@@ -1,0 +1,87 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.menu-tab {
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+  div {
+      width: 25px;
+      height: 3px;
+      background-color: #2d2d2d;
+      display: block;
+      margin: 5px 0px;
+      transition: all 0.6s ease-in-out;
+  }
+}
+.menu-tab.active {
+  left: 345px;
+  transition: all 600ms ease-in-out;
+  background-color: rgba(255, 255, 255, 0.2);
+  #one {
+      transform: translateY(7px) rotate(-135deg);
+      transition: all 0.6s ease-in-out;
+      background-color: #FCA11E;
+  }
+  #two {
+      opacity: 0;
+      transition: 0.4s ease;
+  }
+  #three {
+      transform: translateY(-9px) rotate(-45deg);
+      transition: all 0.6s ease-in-out;
+      background-color: #FCA11E;
+  }
+}
+.navbar-sticky.show {
+  left: 0;
+}
+
+.navbar-sticky .menu-hide {
+  width: 100%;
+  max-width: 250px;
+  left: -250px;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  transition: all 0.6s ease-in-out;
+}
+.navbar-sticky.show .menu-hide {
+  left: 0px;
+  transition: all 0.6s ease-in-out;
+}
