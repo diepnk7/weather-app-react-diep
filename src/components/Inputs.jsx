@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 import { toast } from "react-toastify";
 import MenuMobile from "./MenuMobile";
@@ -32,17 +32,7 @@ function Inputs({ setQuery, units, setUnits }) {
   };
 
   const [isOpenMenu, setOpenMenu] = useState(false);
-  useEffect(() => {
-    var navbar = document.querySelector('.navbar-sticky');
-    var menu_tab = document.querySelector('.menu-tab');
-    if(isOpenMenu == true){
-      navbar.classList.add('show');
-      menu_tab.classList.add('active');
-      return;
-    }
-    navbar.classList.remove('show');
-    menu_tab.classList.remove('active');
-  }, [isOpenMenu]);
+
   const handleOpenMenuMobile = () => {
     setOpenMenu(current => !current);
   };
@@ -111,7 +101,11 @@ function Inputs({ setQuery, units, setUnits }) {
           </svg>
         </div>
       </div>
-      <MenuMobile handleOpenMenuMobile={handleOpenMenuMobile}/>
+      <MenuMobile
+        handleOpenMenuMobile={handleOpenMenuMobile}
+        isOpenMenu={isOpenMenu}
+        setQuery={setQuery}
+      />
     </>
   );
 }
